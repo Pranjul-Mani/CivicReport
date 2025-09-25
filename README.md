@@ -1,36 +1,75 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+# CivicReport
+
+CivicReport is a full-stack web application that empowers citizens to report, track, and resolve civic issues (like potholes, broken streetlights, sanitation problems, etc.).
+
+## Table of Contents
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Deployment](#deployment)
+- [Getting Started](#getting-started)
+
+
+
+## Features
+
+- **Report Issues** – Submit civic problems with descriptions, categories, location, and images.
+
+- **Image Uploads** – Upload issue photos securely via Cloudinary.
+
+- **Authentication** – Secure login/signup using NextAuth
+
+- **Issue Tracking** – View issues by status: Open, In Progress, or Resolved.
+
+- **Modern UI** – Built with Next.js 15, Tailwind CSS, and Shadcn/UI for a responsive, clean experience.
+
+
+
+## Tech Stack
+
+### Frontend
+- **Next.js 15** : Full-stack React framework.
+
+- **Tailwind CSS** : Utility-first styling.
+
+- **Shadcn UI** : Prebuilt UI components.
+
+### Backend
+
+- **Node.js** : Backend runtime.
+
+- **MongoDB** : NoSQL database.
+
+### File Storage: 
+
+- **Cloudinary** : Image storage and management.
 ## Getting Started
-
-First, run the development server:
+### 1. Clone the Repository
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/yourusername/civicreport.git
+cd civicreport
+
+```
+### 2. Setup 
+```bash
+npm install
+
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+####  Configure Environment Variables
+```bash
+# NextAuth
+NEXTAUTH_URL=http://localhost:3000
+NEXTAUTH_SECRET=your_generated_secret
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+# Database
+MONGODB_URI=your_mongodb_connection_string
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+# Cloudinary
+CLOUDINARY_CLOUD_NAME=your_cloud_name
+CLOUDINARY_API_KEY=your_api_key
+CLOUDINARY_API_SECRET=your_api_secret
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```
