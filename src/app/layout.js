@@ -5,6 +5,9 @@ import Providers from "@/components/Providers"
 export const metadata = {
   title: "CivicReport",
   description: "Report and track civic issues in your community",
+  icons: {
+    icon: '/city.png', 
+  }
 }
 
 export default function RootLayout({ children }) {

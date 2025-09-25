@@ -29,6 +29,15 @@ export default function HomePage() {
     setIsReportDialogOpen(false)
   }
 
+  // Handler for Start Reporting button
+  const handleStartReporting = () => {
+    if (status === "unauthenticated") {
+      signIn() 
+    } else {
+      setIsReportDialogOpen(true) 
+    }
+  }
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-green-50">
      
@@ -51,15 +60,14 @@ export default function HomePage() {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link href="/issues">
-                  <Button
-                    size="lg"
-                    className="cursor-pointer bg-gradient-to-r from-blue-600 to-green-600 hover:from-blue-700 hover:to-green-700 text-lg px-8 py-6"
-                  >
-                    Start Reporting
-                    <ArrowRight className="w-5 h-5 ml-2" />
-                  </Button>
-                </Link>
+                <Button
+                  onClick={handleStartReporting}
+                  size="lg"
+                  className="cursor-pointer bg-gradient-to-r from-blue-600 to-green-600 hover:from-blue-700 hover:to-green-700 text-lg px-8 py-6"
+                >
+                  Start Reporting
+                  <ArrowRight className="w-5 h-5 ml-2" />
+                </Button>
                
               </div>
 
@@ -323,15 +331,14 @@ export default function HomePage() {
           <p className="text-xl text-blue-100 mb-8">
             Join thousands of citizens already making a difference in their communities.
           </p>
-          <Link href="/issues">
-            <Button
-              size="lg"
-              className="cursor-pointer bg-white text-blue-600 hover:bg-gray-100 text-lg px-8 py-6"
-            >
-              Start Reporting Issues
-              <ArrowRight className="w-5 h-5 ml-2" />
-            </Button>
-          </Link>
+          <Button
+            onClick={handleStartReporting}
+            size="lg"
+            className="cursor-pointer bg-white text-blue-600 hover:bg-gray-100 text-lg px-8 py-6"
+          >
+            Start Reporting Issues
+            <ArrowRight className="w-5 h-5 ml-2" />
+          </Button>
         </div>
       </section>
 
@@ -362,7 +369,7 @@ export default function HomePage() {
             setIsReportDialogOpen(true) 
           }
         }}
-        className="cursor-pointer fixed bottom-6 right-6 rounded-full w-20 h-20 shadow-2xl bg-gradient-to-r from-blue-600 to-green-600 hover:from-blue-700 hover:to-green-700 hover:scale-110 transition-all duration-200"
+        className="cursor-pointer fixed bottom-6 right-6 rounded-full w-18 h-18 shadow-2xl bg-gradient-to-r from-blue-600 to-green-600 hover:from-blue-700 hover:to-green-700 hover:scale-110 transition-all duration-200"
         size="lg"
       >
         <Plus className="w-16 h-16" />
